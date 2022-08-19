@@ -1,0 +1,52 @@
+/*fondo*/
+body{
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+/* Estilos boton color azul */
+.btn-bd-primary{
+    font-weight: 600; 
+    color: #fff;
+    background-color: #133746;
+    border-color:#707070; 
+}
+
+.btn-bd-primary:hover, .btn-bd-primary:active{
+    color: #fff;
+    background-color: #26637D;
+    border-color: #707070;
+}
+
+.btn-bd-primary:focus{
+    box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.25);
+}
+
+/*estilo para los enlaces*/
+.enlace{
+    text-decoration: none;
+    color:#707070;
+    
+}
+
+.enlace:hover{
+    color: #133746;
+}
+
+
+/*estilos para el registro*/
+
+.bg-bd-primary{
+    background-color: #133746;
+}
+
+.border-bd-primary{
+    border-color:#707070; 
+}
+
+.text-bd-primary{
+    color: #26637D;
+}
+
