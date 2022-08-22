@@ -7,6 +7,8 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./js/script.js"></script>
     <style>
     body {  
       /* display: flex; */
@@ -30,27 +32,29 @@
                 <form action="/register" method="post">        
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombres</label>
-                        <input id="nombre" name="nombre" type="text" class="form-control">              
+                        <input required id="nombre" name="nombre" type="text" class="form-control">              
                     </div>
                     <div class="mb-3">
                         <label for="apellido" class="form-label">Apellidos</label>
-                        <input id="apellido" name="apellido" type="text" class="form-control">              
+                        <input required id="apellido" name="apellido" type="text" class="form-control">              
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Correo de Usuario</label>
-                        <input id="user" name="user" type="email" class="form-control">
+                        <input required id="user" name="user" type="email" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="pass" class="form-label">Contraseña</label>
-                        <input id="pass" name="pass" type="password" class="form-control">
+                        <input required id="pass" name="pass" type="password" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirme su Contraseña</label>
-                        <input type="password" class="form-control">
+                        <input required id="pass2" type="password" class="form-control">
+                        <!-- Error text -->
+                        <span id="error" class="label label-info"></span>
                     </div>
                     <div class="mb-3">
                         <label for="afl" class="form-label">Afiliación Institucional</label>
-                        <input id="afl" name="afl" type="text" class="form-control">              
+                        <input required id="afl" name="afl" type="text" class="form-control">              
                     </div>                                     
             </div>
                     <div class="card-footer bg-transparent border-bd-primary text-center">
@@ -63,3 +67,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>
