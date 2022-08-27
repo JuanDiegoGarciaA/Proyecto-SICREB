@@ -1,9 +1,10 @@
+*{
+    font-family: 'Century Gothic';
+}
 /*fondo*/
 body{
     background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
     background-size:cover;
-
 }
 
 /* Estilos boton color azul */
@@ -50,3 +51,12 @@ body{
     color: #26637D;
 }
 
+/*estilos para olvido contraseña*/
+
+.text-p{
+    padding-left: 10%;
+    padding-right: 10%;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 5%;
+}
