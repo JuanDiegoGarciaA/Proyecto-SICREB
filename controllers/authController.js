@@ -15,17 +15,19 @@ var id = null //variable global para obtener el ID del usuario
 
 exports.register = async (req,res)=>{
     try {
-        const nombre = req.body.nombre
-        const apellido = req.body.apellido
-        const user = req.body.user
-        const pass = req.body.pass
-        const afl = req.body.afl
-        let passHash = await bcryptjs.hash(pass, 8) //encriptando contraseña
+    const nombre = req.body.nombre
+    const apellido = req.body.apellido
+    const user = req.body.user
+    const pass = req.body.pass
+    const afl = req.body.afl
+    let passHash = await bcryptjs.hash(pass, 8) //encriptando contraseña
         conexion.query('INSERT INTO usuarios SET ?',{nombre_usuario:nombre, apellido_usuario:apellido, correo_usuario:user, constrasenia_usuario:passHash, afiliacion_institucional:afl},(err, results)=>{
             if(err){
-                console.log('OCURRIO UN ERROR EN EL REGISTRO'+err)
-            }
+                res.redirect('/aviso')
+                console.log('OCURRIO UN ERROR EN EL REGISTRO=> '+err)
+            }else{
             res.redirect('/login')
+            }
         })
     } catch (error) {
         console.log(error)

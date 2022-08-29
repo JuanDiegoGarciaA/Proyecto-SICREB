@@ -18,6 +18,10 @@ router.get('/register', (req, res)=>{
     res.render('register')
 });
 
+router.get('/aviso', (req, res)=>{
+    res.render('aviso')
+});
+
 router.get('/olvido', (req, res)=>{
     res.render('olvido',{alert:false})
 });
