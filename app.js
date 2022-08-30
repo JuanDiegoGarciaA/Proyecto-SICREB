@@ -9,8 +9,10 @@ const app = express();
 //seteando el motor de plantillas (ejs)
 app.set('view engine','ejs');
 
+
 //seteando la carpeta public para archivos estaticos
 app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //configurando node para procesar datos de formularios
 app.use(express.urlencoded({extended: true}));

@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Century Gothic';
+    font-size: 20px;
+}
+
+body{
+    background-image: url("../img/background.jpg");
+    background-size:cover;
+}
+
+.header{
+    background-color: #133746;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}   
+
+.header .logo img{
+    height: 100px;
+    width: auto;
+}
+.header h1{
+    font-size: 30px;
+    color: white;
+    text-decoration: dashed;
+}
+
+.logo{
+    background-color: white;
+    display: inline-block;
+}
+
+.header .btn-cs{
+    text-decoration: none;
+    padding: 9px 25px;
+    background: white;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    margin-right: .8%;
+}
+
+.header .btn-cs:hover{
+    background-color:#26637D;
+    color: white;
+    transform: scale(1.1);
+}

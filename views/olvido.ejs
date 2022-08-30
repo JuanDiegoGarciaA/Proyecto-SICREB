@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script><!-- script para usar jquery en el proceso de verifiacion de contraseña -->
+    <script src="./js/script.js"></script>
+    <style>
+    body {  
+      /* display: flex; */
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color:rgba(255,255,255,0.95);
+    }
+    </style>
+    <title>Recuperar Contraseña</title>
+  </head>
+  <body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 shadow-lg p-3 mb-5">
+
+        <div class="card border-bd-primary">
+            <div class="card-header bg-bd-primary text-white">Recuperar Contraseña</div>
+            <div class="card-body text-bd-primary">
+                <form action="/olvido" method="post"> 
+                    <div>
+                        <h2 class="text-center">¿Olvido su contraseña?</h2>
+                        <br>
+                        <p class="text-p">Para reajustar su contraseña, envíe su dirección de correo electrónico con el cual se registro al sistema. 
+                            Si podemos encontrarlo en la base de datos, podra actualizar su contraseña.</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Correo de Usuario</label>
+                        <input required id="user" name="user" type="email" class="form-control">              
+                    </div>
+                    <div class="card-footer bg-transparent border-bd-primary text-center">
+                        <a href="login" type="button" class="btn btn-secondary">Volver</a>
+                        <button type="submit" class="btn btn-bd-primary">Solicitar</button>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<% if(alert){ %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+        }).then(()=>{
+            window.location = '/<%= ruta%>'
+        })
+    </script>
+<% } %>
+</body>
+</html>
