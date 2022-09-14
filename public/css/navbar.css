@@ -23,11 +23,7 @@ body{
     height: 100px;
     width: auto;
 }
-.header h1{
-    font-size: 30px;
-    color: white;
-    text-decoration: dashed;
-}
+
 
 .logo{
     background-color: white;
@@ -50,4 +46,29 @@ body{
     background-color:#26637D;
     color: white;
     transform: scale(1.1);
+}
+
+
+@media(min-width: 1024px){
+    .header h1{
+        font-size: 40px;
+        color: aqua;
+        text-decoration: dashed;
+    }
+}
+
+@media(min-width: 768px){
+    .header h1{
+        font-size: 40px;
+        color: white;
+        text-decoration: dashed;
+    }
+}
+
+@media(max-width: 767px){
+    .header h1{
+        font-size: 20px;
+        color: white;
+        text-decoration: dashed;
+    }
 }

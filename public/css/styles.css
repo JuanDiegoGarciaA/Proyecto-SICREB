@@ -5,6 +5,12 @@
 body{
     background-image: url("../img/background.jpg");
     background-size:cover;
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Estilos boton color azul */
@@ -59,4 +65,264 @@ body{
     color: black;
     font-size: 18px;
     margin-bottom: 5%;
+}
+
+/*--------------------- INDEX-----------------------*/
+
+/*CONTENIDO*/
+
+.galeria{
+    margin-top: 2%;
+}
+.galeria .col-lg-4{
+    padding: 25px;
+}
+
+.galeria .col-lg-4 p{
+    font-weight: bold;
+}
+
+.galeria .col-lg-4 img{
+    margin: auto;
+    display: flex;
+    margin: auto;
+    border: solid 1px gray;
+    padding: 10px;
+}
+
+.galeria img{
+    width: auto;
+    height: 200px;
+    justify-content: center;
+    transition: all .3s;
+}
+
+.galeria img:hover{
+    box-shadow: 10px 5px 5px black;
+    transform: scale(1.1);
+    transform-origin: center center;
+}
+
+/*FOOTER*/
+
+.footer{
+    background-color: #133746;
+    text-align: center;
+    padding: 1%;
+    margin-top: 2%;
+    margin-top: auto;
+    
+}
+
+
+@media (max-width: 1260px){
+    body{
+        background-image: none;
+    }
+}
+
+/*textos*/
+
+@media(min-width: 1024px){
+    .footer p{
+        color: #fff;
+        font-size: 50px;
+        font-family: 'Century Gothic';
+    }
+}
+
+@media(min-width: 768px){
+    .footer p{
+        color: #fff;
+        font-size: 15px;
+        font-family: 'Century Gothic';
+    }
+}
+
+@media(max-width: 767px){
+    .footer p{
+        color: #fff;
+        font-size: 12px;
+        font-family: 'Century Gothic';
+    }
+}
+
+
+/*ESTILOS PARA CONSULTA*/
+
+.logocolecciones{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.logocolecciones img{
+    width: 900px;
+    height: auto;
+}
+
+
+.link-consulta{
+    background-color: #133746;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 40px;
+    transition: all .3s;
+    text-align: center;
+}
+
+.link-consulta a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+
+.link-inventario{
+    background-color: #133746;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 40px;
+    transition: all .3s;
+    text-align: center;
+}
+
+.link-inventario a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+.link-consulta:hover{
+    transform: scale(1.1);
+    transform-origin: center center;
+    background-color: #26637D;
+}
+
+.link-inventario:hover{
+    transform: scale(1.1);
+    transform-origin: center center;
+    background-color: #26637D;
+}
+
+.link-inventario a:hover{
+    color: #fff;
+}
+
+.link-consulta a:hover{
+    color: #fff;
+}
+
+
+
+@media(max-width: 992px){
+    .logocolecciones img{
+        width: 700px;
+        height: auto;
+    }
+}
+
+@media(max-width: 767px){
+    .logocolecciones img{
+        width: 450px;
+        height: auto;
+    }
+}
+
+@media(max-width: 414px){
+    .logocolecciones img{
+        width: 330px;
+        height: auto;
+    }
+}
+
+/* ESTILOS PARA BUSCAR */
+.formulario{
+    margin-top: 2%;
+}
+.formulario input[type="radio"]{
+    display: none;
+}
+
+.formulario .radio label{
+    color: #133746;
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.formulario .radio label:hover{
+    background: rgba(38, 99, 125, 0.5);
+}
+
+.formulario .radio label:before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: none;
+    border: 3px solid #133746;
+    border-radius:50%;
+    position: absolute;
+    left: 17px;
+    top: 8px;
+}
+
+.formulario input[type="radio"]:checked + label{
+    padding: 5px 15px;
+    background: #26637D;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.formulario input[type="radio"]:checked + label:before{
+    display: none;
+}
+
+.input{
+    margin-top: 2%;
+}
+
+.input input[type="button"]{
+    margin-top: 1%;
+    color: #133746;
+    border-color: #133746;
+}
+.input input[type="button"]:hover{
+    background-color: #26637D;
+    border-color: #26637D;
+    color: #fff;
+}
+
+#resultado{
+    margin-top: 1%;
+    border: 1px solid black;
+}
+
+#resultado p{
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+.input button{
+    margin-top: 1%;
+    color: #133746;
+    border-color: #133746;
+}
+.input button:hover{
+    background-color: #26637D;
+    border-color: #26637D;
+    color: #fff;
+}
+
+.datochimbo{
+    opacity: 0;
+    cursor: alias;
 }

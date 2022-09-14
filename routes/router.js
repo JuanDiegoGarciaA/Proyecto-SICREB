@@ -30,12 +30,29 @@ router.get('/restaurar', (req, res)=>{
     res.render('restaurar',{alert:false})
 });
 
+router.get('/consulta', (req, res)=>{
+    res.render('consulta')
+});
+
+router.get('/inventario', (req, res)=>{
+    res.render('inventario')
+});
+
+router.get('/buscar', (req, res)=>{
+    res.render('buscar')
+})
+
+router.get('/prueba', (req, res)=>{
+    res.render('prueba')
+})
 //router para los metodos del controller
 router.post('/register',authController.register);
 router.post('/login',authController.login);
 router.get('/logout',authController.logout);
 router.post('/olvido',authController.olvido);
 router.post('/restaurar',authController.restaurar);
+router.post('/buscar',authController.listar);
+router.post('/prueba',authController.prueba);
 
 //exportando el modulo router.js
 module.exports = router

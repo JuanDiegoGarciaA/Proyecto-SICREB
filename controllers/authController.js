@@ -8,6 +8,7 @@ const conexion = require('../database/db');
 //utilizando comunicacion asincrona (prom esas)
 const {promisify} = require('util');
 var id = null //variable global para obtener el ID del usuario
+var resultadoConsulta = []
 
 
 //procedimiento para registro
@@ -180,3 +181,20 @@ exports.restaurar = async (req, res)=>{
     }
 }
 
+exports.listar = (req,res)=>{
+    var datos = req.body.datoChimbo;
+    var consulta ="select * from dwc_iavh where Numero_de_catalogo IN ('";
+    consulta = consulta.concat(datos);
+    consulta = consulta.concat(")");
+    conexion.query(consulta, async (err,resultadoConsulta)=>{
+        //console.log(consulta);
+        console.log(resultadoConsulta)
+        console.log(resultadoConsulta[0].dwc_iavh_Id);
+        
+    })
+    res.redirect('/prueba')
+}
+
+exports.prueba = (req,res)=>{
+    
+}
