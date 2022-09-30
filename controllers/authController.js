@@ -7,6 +7,7 @@ const bcryptjs = require('bcryptjs');
 const conexion = require('../database/db');
 //utilizando comunicacion asincrona (prom esas)
 const {promisify} = require('util');
+const { send } = require('process');
 var id = null //variable global para obtener el ID del usuario
 var resultadoConsulta = []
 
@@ -187,12 +188,9 @@ exports.listar = (req,res)=>{
     consulta = consulta.concat(datos);
     consulta = consulta.concat(")");
     conexion.query(consulta, async (err,resultadoConsulta)=>{
-        //console.log(consulta);
-        console.log(resultadoConsulta)
-        console.log(resultadoConsulta[0].dwc_iavh_Id);
-        
+        res.locals.resultadoConsulta = resultadoConsulta
+        res.render('resultado') 
     })
-    res.redirect('/prueba')
 }
 
 exports.prueba = (req,res)=>{

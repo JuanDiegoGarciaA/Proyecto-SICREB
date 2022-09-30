@@ -326,3 +326,16 @@ body{
     opacity: 0;
     cursor: alias;
 }
+
+
+/* ESTILOS PARA LA TABLA */
+
+table thead {
+    margin-top: 2%;
+    background-color:#133746;
+    color:aliceblue;
+}
+
+.container-fluid{
+    margin-top: 2%;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5ef6a4e4a4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script> 
+        <!-- links para exportar a excel -->
+        <script src="./js/xlsx.full.min.js"></script>
+        <script src="./js/FileSaver.min.js"></script>
+        <script src="./js/tableexport.min.js"></script>
+    <title>Resultado de consulta</title>
+</head>
+<body>
+        <!--navbar-->
+        <header class="header">
+            <a href="consulta" class="btn-cs"><i class="fa-solid fa-left-long"></i></a>
+            <nav>
+                <h1 class="titulo-nav">Buscar en la Colección</h1> 
+            </nav>
+            <a type="button" class="btn-cs" href="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </header>
+    
+        <!--Contenido-->
+        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <table id="tablaResultado" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>dwc_iavh_Id</th>
+                            <th>Numero_de_Catalogo</th>
+                            <th>basisOfRecord</th>
+                            <th>collectionName</th>
+                            <th>code</th>
+                            <th>catalogNumber</th>
+                            <th>occurrenceRemarks</th>
+                            <th>recordNumber</th>
+                            <th>recordedBy</th>
+                            <th>sex</th>
+                            <th>lifeStage</th>
+                            <th>preparations</th>
+                            <th>sampligProtocol</th>
+                            <th>eventDate</th>
+                            <th>eventTime</th>
+                            <th>habitat</th>
+                            <th>eventRemarks</th>
+                            <th>continent</th>
+                            <th>country</th>
+                            <th>countryCode</th>
+                            <th>stateProvince</th>
+                            <th>county</th>
+                            <th>locality</th>
+                            <th>minimumElevationInMeters</th>
+                            <th>maximunElevationInMeters</th>
+                            <th>locationRemarks</th>
+                            <th>verbatimLatitude</th>
+                            <th>verbatimLongitude</th>
+                            <th>verbatimCoordinateSystem</th>
+                            <th>verbatimSRS</th>
+                            <th>decimalLatitude</th>
+                            <th>decimalLongitude</th>
+                            <th>geodeticDatum</th>
+                            <th>identifiedBy</th>
+                            <th>dateIdentified</th>
+                            <th>identificationRemarks</th>
+                            <th>identificationQualifier</th>
+                            <th>typeStatus</th>
+                            <th>referenceTypes</th>
+                            <th>scientificName</th>
+                            <th>kingdom</th>
+                            <th>phylum</th>
+                            <th>class</th>
+                            <th>order</th>
+                            <th>family</th>
+                            <th>subfamily</th>
+                            <th>genus</th>
+                            <th>specificEpithet</th>
+                            <th>infraspecificEpithet</th>
+                            <th>taxonRank</th>
+                            <th>scientificNameAuthorship</th>
+                            <th>photograph</th>
+                            <th>repositoryURL</th>
+                            <th>updateDate</th>
+                            <th>projectName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% resultadoConsulta.forEach((busqueda)=> { %>
+                        <tr>
+                            <td><%= busqueda.dwc_iavh_Id  %></td>
+                            <td><%= busqueda.Numero_de_Catalogo  %></td>
+                            <td><%= busqueda.basisOfRecord  %></td>
+                            <td><%= busqueda.collectionName  %></td>
+                            <td><%= busqueda.code  %></td>
+                            <td><%= busqueda.catalogNumber  %></td>
+                            <td><%= busqueda.occurrenceRemarks %></td>
+                            <td><%= busqueda.recordNumber  %></td>
+                            <td><%= busqueda.recordedBy  %></td>
+                            <td><%= busqueda.sex  %></td>
+                            <td><%= busqueda.lifeStage  %></td>
+                            <td><%= busqueda.preparations  %></td>
+                            <td><%= busqueda.sampligProtocol  %></td>
+                            <td><%= busqueda.eventDate  %></td>
+                            <td><%= busqueda.eventTime  %></td>
+                            <td><%= busqueda.habitat  %></td>
+                            <td><%= busqueda.eventRemarks  %></td>
+                            <td><%= busqueda.continent  %></td>
+                            <td><%= busqueda.country  %></td>
+                            <td><%= busqueda.countryCode  %></td>
+                            <td><%= busqueda.stateProvince  %></td>
+                            <td><%= busqueda.county  %></td>
+                            <td><%= busqueda.locality  %></td>
+                            <td><%= busqueda.minimumElevationInMeters  %></td>
+                            <td><%= busqueda.maximunElevationInMeters  %></td>
+                            <td><%= busqueda.locationRemarks  %></td>
+                            <td><%= busqueda.verbatimLatitude  %></td>
+                            <td><%= busqueda.verbatimLongitude  %></td>
+                            <td><%= busqueda.verbatimCoordinateSystem  %></td>
+                            <td><%= busqueda.verbatimSRS %></td>
+                            <td><%= busqueda.decimalLatitude  %></td>
+                            <td><%= busqueda.decimalLongitude  %></td>
+                            <td><%= busqueda.geodeticDatum  %></td>
+                            <td><%= busqueda.identifiedBy  %></td>
+                            <td><%= busqueda.dateIdentified  %></td>
+                            <td><%= busqueda.identificationRemarks  %></td>
+                            <td><%= busqueda.identificationQualifier %></td>
+                            <td><%= busqueda.typeStatus  %></td>
+                            <td><%= busqueda.referenceTypes  %></td>
+                            <td><%= busqueda.scientificName  %></td>
+                            <td><%= busqueda.kingdom  %></td>
+                            <td><%= busqueda.phylum  %></td>
+                            <td><%= busqueda.class  %></td>
+                            <td><%= busqueda.order %></td>
+                            <td><%= busqueda.family  %></td>
+                            <td><%= busqueda.subfamily  %></td>
+                            <td><%= busqueda.genus  %></td>
+                            <td><%= busqueda.specificEpithet  %></td>
+                            <td><%= busqueda.infraspecificEpithet  %></td>
+                            <td><%= busqueda.taxonRank  %></td>
+                            <td><%= busqueda.scientificNameAuthorship  %></td>
+                            <td><%= busqueda.photograph  %></td>
+                            <td><%= busqueda.repositoryURL  %></td>
+                            <td><%= busqueda.updateDate  %></td>
+                            <td><%= busqueda.projectName  %></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button id="btnExportar" class="btn btn-success" >
+            <i class="fas fa-file-excel"></i>Exportar
+        </button>
+    </div>
+        <!--FOOTER-->
+    <footer class="footer">
+        <p>
+            INSTITUTO DE INVESTIGACIÓN DE RECURSOS BIOLÓGICOS ALEXANDER VON HUMBOLDT <br>
+            © 2020 INSTITUTO HUMBOLDT. TODOS LOS DERECHOS RESERVADOS. | CRÉDITOS<br>
+            CALLE 28 A # 15 - 09 BOGOTÁ D.C., COLOMBIA<br>
+            PBX: (+57) 601 320 2767 HORARIOS DE ATENCIÓN: LUNES A VIERNES, 8:00A.M. - 5:00P.M.<br>
+        </p>
+    </footer>
+    <script src="./js/exportexcel.js"></script>
+</body>
+</html>
