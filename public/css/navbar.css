@@ -6,11 +6,6 @@
     font-size: 20px;
 }
 
-body{
-    background-image: url("../img/background.jpg");
-    background-size:cover;
-}
-
 .header{
     background-color: #133746;
     display: flex;

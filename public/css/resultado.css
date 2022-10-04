@@ -1,0 +1,51 @@
+body{
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.footer{
+    background-color: #133746;
+    text-align: center;
+    padding: 1%;
+    margin-top: 2%;
+    margin-top: auto;
+    
+}
+
+
+@media (max-width: 1260px){
+    body{
+        background-image: none;
+    }
+}
+
+/*textos*/
+
+@media(min-width: 1024px){
+    .footer p{
+        color: #fff;
+        font-size: 50px;
+        font-family: 'Century Gothic';
+    }
+}
+
+@media(min-width: 768px){
+    .footer p{
+        color: #fff;
+        font-size: 15px;
+        font-family: 'Century Gothic';
+    }
+}
+
+@media(max-width: 767px){
+    .footer p{
+        color: #fff;
+        font-size: 12px;
+        font-family: 'Century Gothic';
+    }
+}

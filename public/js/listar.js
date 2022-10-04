@@ -4,7 +4,8 @@ window.onload = function(){
 function mostrarArreglo(){
     let dato = document.getElementById('texto').value;
     datos.push(dato);
-    datoChimbo = '';
+    datoBusqueda = '';
+    datoBusqueda2 = '';
 
 
     let resultado = document.getElementById('resultado');
@@ -19,17 +20,31 @@ function mostrarArreglo(){
 }
 
 function enviarTexto(){
+    var texto2= "";  
+    if (typeof texto2 === "'") { 
+        for (let i = 0; i < datos.length; i++) {
+            texto2 = datos[i]+"'";
+    }
+    document.getElementById("datoBusqueda2").value = texto2;
+} else {
+    for (let i = 0; i < datos.length; i++) {
+        texto2 = texto2.concat("'%",datos[i],"%'");
+    }
+    document.getElementById("datoBusqueda2").value = texto2;
+}
+
     
 var texto1= "'";  
         if (typeof texto1 === "'") { 
             for (let i = 0; i < datos.length; i++) {
                 texto1 = datos[i]+"'";
         }
-        document.getElementById("datoChimbo").value = texto1;
+        document.getElementById("datoBusqueda").value = texto1;
     } else {
         for (let i = 0; i < datos.length; i++) {
             texto1 = texto1.concat(", '", datos[i],"'");
         }
-        document.getElementById("datoChimbo").value = texto1;
+        document.getElementById("datoBusqueda").value = texto1;
     }
 }
+

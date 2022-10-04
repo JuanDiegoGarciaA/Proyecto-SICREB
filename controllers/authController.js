@@ -183,14 +183,27 @@ exports.restaurar = async (req, res)=>{
 }
 
 exports.listar = (req,res)=>{
-    var datos = req.body.datoChimbo;
-    var consulta ="select * from dwc_iavh where Numero_de_catalogo IN ('";
-    consulta = consulta.concat(datos);
-    consulta = consulta.concat(")");
-    conexion.query(consulta, async (err,resultadoConsulta)=>{
-        res.locals.resultadoConsulta = resultadoConsulta
-        res.render('resultado') 
-    })
+    var estado = req.body.estado
+    num = "num"
+    if(estado === num){
+        var datos = req.body.datoBusqueda;
+        var consulta ="select * from dwc_iavh where Numero_de_catalogo IN ('";
+        consulta = consulta.concat(datos);
+        consulta = consulta.concat(")");
+        conexion.query(consulta, async (err,resultadoConsulta)=>{
+            res.locals.resultadoConsulta = resultadoConsulta
+            res.render('resultado') 
+        })
+    }else{
+        var datos = req.body.datoBusqueda2;
+        var consulta = 'select * from dwc_iavh where scientificName LIKE'
+        consulta = consulta.concat(datos);
+        console.log(consulta)
+        conexion.query(consulta, async (err,resultadoConsulta)=>{
+            res.locals.resultadoConsulta = resultadoConsulta
+            res.render('resultado') 
+        })
+    }
 }
 
 exports.prueba = (req,res)=>{

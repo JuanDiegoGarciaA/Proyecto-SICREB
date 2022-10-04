@@ -26,20 +26,20 @@
     <div class="container">
         <form method="post" class="formulario" action="/buscar">
             <div class="radio">
-                <input type="radio" name="estado" id="1">
+                <input type="radio" name="estado" id="1" value="num">
                 <label for="1">Numero Cátalogo</label> 
-                <input type="radio" name="estado" id="2">
+                <input type="radio" name="estado" id="2" value="nom">
                 <label for="2">Nombre de especie</label> 
             </div>
 
             <div class="input">
-                <input type="text" name="datoChimbo" id="datoChimbo" readonly="readonly" class="datochimbo">
+                <input type="text" name="datoBusqueda" id="datoBusqueda" readonly="readonly" class="datochimbo">
+                <input type="text" name="datoBusqueda2" id="datoBusqueda2" readonly="readonly" class="datochimbo">
                 <input class="form-control" name="dato" id="texto" type="text" placeholder="Escribe el numero de cátalago ó nombre de especie">
                 <input type="button" id="btnMostrarArreglo" value="Listar" onclick="mostrarArreglo(); enviarTexto();" class="btn btn-outline-primary"></input>
                 <div id="resultado">
-
+                    <!--Contenido del listado-->
                 </div>
-
                 <button class="btn btn-outline-primary">Buscar</button>
             </div>
         </form>
