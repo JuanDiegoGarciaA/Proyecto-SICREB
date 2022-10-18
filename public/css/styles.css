@@ -338,3 +338,30 @@ table thead {
 .container-fluid{
     margin-top: 2%;
 }
+
+/*estilos qr*/
+#qr{
+    display: none;
+}
+.result{
+    color:#26637D;
+    padding:15px;
+}
+.row{
+    display:flex;
+}
+
+#mostrarqr{
+    border: solid #133746;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 93%;
+    transition: all 0.3s ease 0s;
+}
+
+#mostrarqr:hover{
+    background-color:#26637D;
+    color: white;
+    transform: scale(1.1);
+}

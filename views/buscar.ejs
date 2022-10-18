@@ -11,6 +11,7 @@
     <title>Colecciones</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/listar.js"></script>
+    <script src="./js/html5-qrcode.min_.js"></script>
 </head>
 <body>
     <!--navbar-->
@@ -26,17 +27,30 @@
     <div class="container">
         <form method="post" class="formulario" action="/buscar">
             <div class="radio">
-                <input type="radio" name="estado" id="1" value="num">
+                <input type="radio" name="estado" id="1" value="num" required>
                 <label for="1">Numero Cátalogo</label> 
                 <input type="radio" name="estado" id="2" value="nom">
                 <label for="2">Nombre de especie</label> 
             </div>
-
             <div class="input">
-                <input type="text" name="datoBusqueda" id="datoBusqueda" readonly="readonly" class="datochimbo">
-                <input type="text" name="datoBusqueda2" id="datoBusqueda2" readonly="readonly" class="datochimbo">
-                <input class="form-control" name="dato" id="texto" type="text" placeholder="Escribe el numero de cátalago ó nombre de especie">
+                <a id="mostrarqr" onclick="mostrarqr();"><i class="fa-sharp fa-solid fa-qrcode"></i></a>
+                <input type="text" name="datoNumero" id="datoNumero" readonly="readonly" class="datochimbo">
+                <input type="text" name="datoNombre" id="datoNombre" readonly="readonly" class="datochimbo">
+                <input class="form-control" name="dato" id="texto" type="text" placeholder="Escribe el numero de cátalago ó nombre de especie" required>
                 <input type="button" id="btnMostrarArreglo" value="Listar" onclick="mostrarArreglo(); enviarTexto();" class="btn btn-outline-primary"></input>
+                <div class="qr" id="qr">
+                    <div class="row">
+                        <div class="col">
+                            <div style="width:500px;" id="reader"></div>
+                        </div>
+                            <div class="col" style="padding:30px;">
+                                <h4>Resultado del codigo QR:</h4>
+                                <div id="result"></div>
+                            </div>
+                                <script src="./js/lectorqr.js"></script>
+                    </div>
+                </div>
+            </div>
                 <div id="resultado">
                     <!--Contenido del listado-->
                 </div>

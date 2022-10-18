@@ -45,6 +45,8 @@ router.get('/buscar', (req, res)=>{
 router.get('/resultado', (req, res)=>{
     res.render('resultado')
 })
+
+
 //router para los metodos del controller
 router.post('/register',authController.register);
 router.post('/login',authController.login);
@@ -52,7 +54,8 @@ router.get('/logout',authController.logout);
 router.post('/olvido',authController.olvido);
 router.post('/restaurar',authController.restaurar);
 router.post('/buscar',authController.listar);
-router.post('/resultado',authController.prueba);
+router.post('/consulta',authController.especie);
+
 
 //exportando el modulo router.js
 module.exports = router

@@ -10,6 +10,7 @@ const {promisify} = require('util');
 const { send } = require('process');
 var id = null //variable global para obtener el ID del usuario
 var resultadoConsulta = []
+var especie = ""
 
 
 //procedimiento para registro
@@ -182,22 +183,35 @@ exports.restaurar = async (req, res)=>{
     }
 }
 
+exports.especie = (req,res)=>{
+    especie = req.body.especie
+    res.render('consulta')
+}
+
 exports.listar = (req,res)=>{
     var estado = req.body.estado
+    console.log("esta es la especie"+especie)
     num = "num"
     if(estado === num){
-        var datos = req.body.datoBusqueda;
+        var datos = req.body.datoNumero;
         var consulta ="select * from dwc_iavh where Numero_de_catalogo IN ('";
         consulta = consulta.concat(datos);
         consulta = consulta.concat(")");
+        consulta = consulta.concat("AND code IN ('");
+        consulta = consulta.concat(especie);
+        consulta = consulta.concat("')");
+        console.log(consulta)
         conexion.query(consulta, async (err,resultadoConsulta)=>{
             res.locals.resultadoConsulta = resultadoConsulta
             res.render('resultado') 
         })
     }else{
-        var datos = req.body.datoBusqueda2;
+        var datos = req.body.datoNombre;
         var consulta = 'select * from dwc_iavh where scientificName LIKE'
         consulta = consulta.concat(datos);
+        consulta = consulta.concat("AND code IN ('");
+        consulta = consulta.concat(especie);
+        consulta = consulta.concat("')");
         console.log(consulta)
         conexion.query(consulta, async (err,resultadoConsulta)=>{
             res.locals.resultadoConsulta = resultadoConsulta
@@ -206,6 +220,4 @@ exports.listar = (req,res)=>{
     }
 }
 
-exports.prueba = (req,res)=>{
-    
-}
+

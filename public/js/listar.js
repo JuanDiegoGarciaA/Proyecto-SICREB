@@ -25,12 +25,17 @@ function enviarTexto(){
         for (let i = 0; i < datos.length; i++) {
             texto2 = datos[i]+"'";
     }
-    document.getElementById("datoBusqueda2").value = texto2;
+    document.getElementById("datoNombre").value = texto2;
 } else {
     for (let i = 0; i < datos.length; i++) {
-        texto2 = texto2.concat("'%",datos[i],"%'");
+        if(i == 0){
+            texto2 = texto2.concat("'%",datos[i],"'");
+        }
+        else {
+            texto2 = texto2.concat("OR scientificName LIKE '%",datos[i],"'");
+        }
     }
-    document.getElementById("datoBusqueda2").value = texto2;
+    document.getElementById("datoNombre").value = texto2; 
 }
 
     
@@ -39,12 +44,12 @@ var texto1= "'";
             for (let i = 0; i < datos.length; i++) {
                 texto1 = datos[i]+"'";
         }
-        document.getElementById("datoBusqueda").value = texto1;
+        document.getElementById("datoNumero").value = texto1;
     } else {
         for (let i = 0; i < datos.length; i++) {
             texto1 = texto1.concat(", '", datos[i],"'");
         }
-        document.getElementById("datoBusqueda").value = texto1;
+        document.getElementById("datoNumero").value = texto1;
     }
 }
 

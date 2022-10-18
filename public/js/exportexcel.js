@@ -24,7 +24,7 @@ $(document).ready(function () {
         },
         scrollY: 500,
         scrollX: 400,
-        lengthMenu: [ [50, 100, -1 ], [50, 100, "Todo"] ],
+        lengthMenu: [ [50, 100, 300 ], [50, 100, 300] ],
     })
 });
 
