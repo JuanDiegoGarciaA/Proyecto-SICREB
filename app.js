@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     next();
 });
-
+//puerto por donde se va a visualizar todo lo que se va a hacer en este caso se establecio el puerto 3000
 app.listen(3000, ()=>{
     console.log('SERVER CORRIENDO EN http://localhost:3000')
 });

@@ -1,25 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
-    <title>SICREB-LOGIN</title>
+    <meta charset="utf-8"><!--trabajar con caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--manejo de la vista estandar -->
+    <title>SICREB-LOGIN</title><!--Titulo de la vista -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"><!--link de los estilos de Bootstrap -->
 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    
     <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet"><!--link de los estilos que se encuentran en css -->
+    <link href="css/signin.css" rel="stylesheet"><!--link de los estilos que se encuentran en css para el login -->
 </head>
 <body class="text-center">
-    <!--<div class="image">
-        <img src="img/bannerTiendaHumboldt.png" alt="">
-    </div>-->
     <main class="form-signin w-100 m-auto text-center shadow-lg  mb-10">
         <form id="formLogin" action="/login" method="post">
             <img class="mb-4" src="img/LOGO-COLECCIONES-1.png" alt="" width="300" height="auto">
@@ -44,6 +36,7 @@
         
     </main>
 
+    <!--Script para la generacion de alertas-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <% if(alert){ %>
         <script>

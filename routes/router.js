@@ -3,15 +3,15 @@ const router = express.Router()
 //llamando la carpeta controller
 const authController =require('../controllers/authController');
 
-//TODO: el enrutador sabes que las plantillas de vistas esta en la carpeta "views" por ende no se justifica toda la ruta.
+//TODO: el enrutador sabe que las plantillas de vistas esta en la carpeta "views" por ende no se justifica toda la ruta.
 
-//router para las vistas
+//router para las vistas y designaciones de URL
 router.get('/', authController.Authenticated, (req, res)=>{
     res.render('index')
 });
 
 router.get('/login', (req, res)=>{
-    res.render('login',{alert:false})
+    res.render('login',{alert:false}) //si la ruta cuenta con esta caracteristica:{alert:false} se hace para inicializar la alerta, asi que si se desea colocar alertas en otras rutas es sumamente necesario que cuente con este parametro.
 });
 
 router.get('/register', (req, res)=>{
